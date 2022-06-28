@@ -1,26 +1,28 @@
 {
-  "name": "desafiodb",
+  "name": "mocks_normalizr",
   "version": "1.0.0",
-  "description": "Desafio DB de SQL",
-  "main": "server.js",
+  "description": "",
+  "main": "./src/server.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./src/server.js"
+    "start": "node server.js"
   },
-  "keywords": [
-    "SQL"
-  ],
-  "author": "RUIZ DIAZ JUAN",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rken2010/mocks.git"
+  },
+  "keywords": [],
+  "author": "",
   "license": "ISC",
-  "dependencies": {
-    "express": "^4.18.1",
-    "faker": "^6.6.6",
-    "knex": "^2.1.0",
-    "mysql": "^2.18.1",
-    "socket.io": "^4.5.1",
-    "sqlite3": "^5.0.8"
+  "bugs": {
+    "url": "https://github.com/rken2010/mocks/issues"
   },
-  "devDependencies": {
-    "@faker-js/faker": "^7.3.0"
+  "homepage": "https://github.com/rken2010/mocks#readme",
+  "dependencies": {
+    "@faker-js/faker": "^7.3.0",
+    "express": "^4.18.1",
+    "normalizr": "^3.6.2",
+    "socket.io": "^4.5.1"
   }
 }

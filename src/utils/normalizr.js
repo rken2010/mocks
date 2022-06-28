@@ -1,14 +1,23 @@
-const { normalize, denormalize, schema } = require('normalizr');
+import { generateProduct , print, generateMessage } from './mocks.js';
+import { normalize, schema } from 'normalizr';
 
-const normalizar = normalizr.normalize;
+// Definimos un esquema de autor
+const schemaAuthor = new schema.Entity('author');
 
-const schemaAuthor = new schema.Entity('author', {}, { idAttribute: 'id' });
+// Definimos un esquema de mensaje
+const schemaMensaje = new schema.Entity('post', { author: schemaAuthor })
 
-const schemaMensaje = new schema.Entity('message', { author: schemaAuthor }, { idAttribute: 'id' })
+// Definimos un esquema de posts
+const schemaMensajes = new schema.Entity('posts', { mensajes: [schemaMensaje] }, { idAttribute: 'id' })
 
-const schemaChat = new schema.Entity('chat', { chat: [message]})
+const normalizarMensajes = (mensajesConId) => normalize({ id: 'mensajes', mensajes: mensajesConId }, schemaMensajes)
 
-const normalizeChat = normalize(chat, schemaChat);
-const desnormalizeChat = denormalize(normalizeChat, schemaChat);
+export { normalizarMensajes }
 
-const utils = require('utils');
+
+
+// //------------- PRUEBA DE FUNCIONALIDADES -----------------//
+const mjeNorm = normalizarMensajes(generateMessage(2));
+
+console.log(print( mjeNorm) );
+
