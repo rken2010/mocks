@@ -17,7 +17,9 @@ export { normalizarMensajes }
 
 
 // //------------- PRUEBA DE FUNCIONALIDADES -----------------//
+/*
 const mjeNorm = normalizarMensajes(generateMessage(2));
 
 console.log(print( mjeNorm) );
 
+*/
